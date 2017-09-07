@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Halaman Students</h1>
+    <a href="/">Home</a>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>subject_name</th>
+          <!-- <th>createdAd</th>
+          <th>updateAd</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <%data.forEach( rows => { %>
+          <tr>
+            <td><%=rows.id%></td>
+            <td><%=rows.subject_name%></td>
+            <!-- <td><%=rows.createdAd%></td>
+            <td><%=rows.updateAd%></td> -->
+            <!-- <td>
+              <a href="/subjects/edit/<%=rows.id%>">Edit</a>
+              <a href="/subjects/delete/<%=rows.id%>">Delete</a>
+            </td> -->
+          </tr>
+        <% })%>
+      </tbody>
+      </table>
+  </body>
+</html>
