@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     email: DataTypes.STRING,
+    subjectsId: DataTypes.STRING,
   }, {
     classMethods: {
       associate: function(models) {
@@ -11,5 +12,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+  Teachers.associate = function (models) {
+    const Teachers = this.sequelize.define('Teachers', {foreignKey:'subjectsId'})
+    Teachers.belongsTo(models.Subjects);
+  };
+
   return Teachers;
 };
