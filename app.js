@@ -11,7 +11,7 @@ let teachers = require('./route/teachers.js');
 let subjects = require('./route/subjects.js');
 let students = require('./route/students.js');
 
-app.use('/',index)
+app.use('/',index);
 app.use('/teachers',teachers);
 app.use('/subjects',subjects);
 app.use('/students',students);
@@ -20,4 +20,3 @@ app.use('/students',students);
 app.listen(3001, function() {
     console.log('express app now listeng 3000');
   });
-
