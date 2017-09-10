@@ -3,6 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+        table {
+           width: 100%;
+        }
+        td {
+        height: 50px;
+        vertical-align: bottom;
+        }
+        th, td {
+        padding: 15px;
+        text-align: left;
+        }
+        tr:nth-child(even) {
+          background-color: #f2f2f2
+        }
+        th {
+        background-color: #4CAF50;
+        color: white;
+        }
+        .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+          </style>
   </head>
   <body>
     <h1>Halaman Students</h1>
@@ -11,9 +44,8 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>subject_name</th>
-          <!-- <th>createdAd</th>
-          <th>updateAd</th> -->
+          <th>Subject Name</th>
+          <th>Teachers</th>
         </tr>
       </thead>
       <tbody>
@@ -21,14 +53,8 @@
           <tr>
             <td><%=rows.id%></td>
             <td><%=rows.subject_name%></td>
-            <!-- <td><%=rows.createdAd%></td>
-            <td><%=rows.updateAd%></td> -->
-            <!-- <td>
-              <a href="/subjects/edit/<%=rows.id%>">Edit</a>
-              <a href="/subjects/delete/<%=rows.id%>">Delete</a>
-            </td> -->
-          </tr>
         <% })%>
+          </tr>
       </tbody>
       </table>
   </body>
