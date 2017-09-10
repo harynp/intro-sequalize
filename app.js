@@ -17,6 +17,6 @@ app.use('/subjects',subjects);
 app.use('/students',students);
 
 
-app.listen(3001, function() {
+app.listen(3000, function() {
     console.log('express app now listeng 3000');
   });
