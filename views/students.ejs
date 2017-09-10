@@ -39,7 +39,8 @@
   </head>
   <body>
     <h1>Halaman Students</h1>
-    <a href="/">Home</a>
+    <a href="/students/add"><button>Add</button></a>
+    <a href="/"><button>Home</button></a>
     <table>
       <thead>
         <tr>
@@ -47,9 +48,10 @@
           <th>first_name</th>
           <th>last_name</th>
           <th>email</th>
-          <th>createAt</th>
-          <th>updateAt</th>
+          <!-- <th>createAt</th>
+          <th>updateAt</th> -->
           <th>Action</th>
+          <th>Options</th>
         </tr>
       </thead>
       <tbody>
@@ -59,8 +61,9 @@
             <td><%=rows.first_name%></td>
             <td><%=rows.last_name%></td>
             <td><%=rows.email%></td>
-            <td><%=rows.createdAt%></td>
-            <td><%=rows.updatedAt%></td>
+            <!-- <td><%=rows.createdAt%></td>
+            <td><%=rows.updatedAt%></td> -->
+            <td><a href="/students/add/<%=rows.id%>">Add Subject</td></a>
             <td>
               <a href="/students/edit/<%=rows.id%>">Edit</a>
               <a href="/students/delete/<%=rows.id%>">Delete</a>
@@ -70,10 +73,10 @@
       </tbody>
       </table>
   </body>
-  <form action="/students" method="POST">
+  <!-- <form action="/students" method="POST">
     <input type="text" name="first_name" placeholder="first_name">
     <input type="text" name="last_name" placeholder="last_name">
     <input type="email" name="email" placeholder="Email">
     <input type="submit" value="SUBMIT">
-  </form>
+  </form> -->
 </html>

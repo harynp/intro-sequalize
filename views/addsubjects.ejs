@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Add Subject to Students</h1>
+  </td>
+  </tr>
+  <tbody>
+  </tbody>
+
+<table border = '2px'>
+<form action="/students/add/:id" method="POST">
+  <label ><td>First Name : <%= data.first_name%></label><br />
+  <label >Last Name : <%= data.last_name%></label><br />
+  <label >Email : <%= data.email%> </label><br />
+  <label>Choose Subjects : <label><br />
+      <select class="" name="subjectsId">
+           <option value="kimia">Kimia</option>
+            <option value="ekonomi">Ekonomi</option>
+        </select>
+  <input type="submit" value="SUBMIT">
+</form>
+</table>
+</body>
+
+</html>

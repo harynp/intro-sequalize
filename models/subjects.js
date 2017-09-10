@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   Subjects.associate = function (models) {
-    // const Subjects = this.sequelize.define('Subjects', {foreignKey:'subjectsId'})
+    const Subjects = this.sequelize.define('Subjects', {foreignKey:'subjectsId'})
     // Subjects.hasMany(models.Teachers);
     Subjects.hasMany(models.Teachers, {foreignKey: 'subjectsId'});
   };

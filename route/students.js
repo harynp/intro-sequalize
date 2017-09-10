@@ -13,7 +13,17 @@ router.get('/', (req, res) => {
   })
 })
 
-router.post('/', (req, res) => {
+router.get('/add', (req, res) => {
+  models.Teachers.findAll()
+  .then(data => {
+    res.render('addstudents', {data : data, tittle : 'Halaman Tambah Students'})
+  })
+  .catch(err => {
+      res.send(err)
+  })
+})
+
+router.post('/add', (req, res) => {
     models.Student.build({
         first_name: `${req.body.first_name}`,
         last_name : `${req.body.last_name}`,
@@ -49,39 +59,32 @@ router.post('/', (req, res) => {
         res.render('studentsedit', {data : data[0], tittle : 'Halaman Edit Students'})
       })
     })
-    
+
     router.post('/edit/:id', (req,res) => {
     models.Student.update({
-      
+
            first_name: `${req.body.first_name}`,
            last_name : `${req.body.last_name}`,
            email : `${req.body.email}`
-      
+
     },
     {where: { id : `${req.params.id}`}}
-  
+
   )
       .then(data => {
         res.redirect('/students');
       })
     })
-      
-    // { nom: req.body.nom }, { id: user.id });
+
+    router.get('/add/:id/', (req,res) => {
+      models.Student.findAll({
+        where: {
+          id:`${req.params.id}`
+        }
+      })
+      .then(data => {
+        res.render('addsubjects', {data : data[0], tittle : 'Add Subject to Students'})
+      })
+    })
+
 module.exports = router
-
-
-// models.Student.update(
-//   {
-//    first_name: `${req.body.first_name}`,
-//    last_name : req.body.last_name,
-//    email : req.body.email
-//   },
-//     { 
-//       where: {id:req.params.id } 
-//   }
-//   })
-
-//   .then(data => {
-//   res.redirect('/students')
-//   )
-// })
